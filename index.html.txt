@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Concerfate's MultiTool</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #050914;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px;
+            background: #080d1a;
+            border-bottom: 1px solid #1c2940;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .subtitle {
+            color: #71809d;
+            margin-top: 8px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 25px;
+        }
+
+        .menu {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(220px, 1fr)
+            );
+
+            gap: 15px;
+        }
+
+        button {
+            padding: 20px;
+
+            background: #0b1222;
+            color: white;
+
+            border: 1px solid #243452;
+            border-radius: 12px;
+
+            cursor: pointer;
+            text-align: left;
+
+            font-size: 15px;
+
+            transition: 0.15s;
+        }
+
+        button:hover {
+            background: #111d33;
+            border-color: #4c75b5;
+            transform: translateY(-2px);
+        }
+
+        .number {
+            color: #5d8cff;
+            font-weight: bold;
+            margin-right: 6px;
+        }
+
+        .description {
+            display: block;
+            margin-top: 6px;
+
+            color: #75839d;
+            font-size: 12px;
+        }
+
+        #result {
+            margin-top: 25px;
+            padding: 20px;
+
+            background: #080d1a;
+            border: 1px solid #1c2940;
+            border-radius: 12px;
+
+            display: none;
+        }
+
+        #result h2 {
+            margin-top: 0;
+        }
+
+        pre {
+            background: #03060d;
+            padding: 15px;
+
+            border-radius: 8px;
+
+            overflow: auto;
+
+            color: #9db8e8;
+        }
+
+        .warning {
+            color: #f3b95f;
+        }
+
+        footer {
+            text-align: center;
+
+            color: #56637b;
+
+            padding: 30px;
+
+            font-size: 12px;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <h1>CONCERFATE'S MULTITOOL</h1>
+
+    <div class="subtitle">
+        Web Edition
+    </div>
+
+</header>
+
+
+
+<div class="container">
+
+
+    <div class="menu">
+
+
+        <button onclick="github()">
+
+            <span class="number">01</span>
+            GitHub
+
+            <span class="description">
+                Ouvrir le GitHub
+            </span>
+
+        </button>
+
+
+
+        <button onclick="demo('Destroy Webhook')">
+
+            <span class="number">02</span>
+            Destroy Webhook
+
+            <span class="description">
+                Démonstration
+            </span>
+
+        </button>
+
+
+
+        <button onclick="demo('Webhook Spammer')">
+
+            <span class="number">03</span>
+            Webhook Spammer
+
+            <span class="description">
+                Démonstration
+            </span>
+
+        </button>
+
+
+
+        <button onclick="networkInfo()">
+
+            <span class="number">04</span>
+            IP Configuration
+
+            <span class="description">
+                Informations réseau disponibles
+            </span>
+
+        </button>
+
+
+
+        <button onclick="pingDemo()">
+
+            <span class="number">05</span>
+            Ping an IP Address
+
+            <span class="description">
+                Diagnostic réseau
+            </span>
+
+        </button>
+
+
+
+        <button onclick="demo('Nitro Generator')">
+
+            <span class="number">06</span>
+            Generate Nitro Codes
+
+            <span class="description">
+                Démonstration
+            </span>
+
+        </button>
+
+
+
+        <button onclick="urlShortener()">
+
+            <span class="number">07</span>
+            URL Shortener
+
+            <span class="description">
+                Démonstration
+            </span>
+
+        </button>
+
+
+
+        <button onclick="demo('IP Information')">
+
+            <span class="number">08</span>
+            Grab IP Info
+
+            <span class="description">
+                Démonstration
+            </span>
+
+        </button>
+
+
+
+        <button onclick="demo('IP Geo Lookup')">
+
+            <span class="number">09</span>
+            IP Geo Lookup
+
+            <span class="description">
+                Démonstration
+            </span>
+
+        </button>
+
+
+
+        <button onclick="demo('Discord Manager')">
+
+            <span class="number">10</span>
+            Discord Manager
+
+            <span class="description">
+                Démonstration
+            </span>
+
+        </button>
+
+
+
+        <button onclick="cardDemo()">
+
+            <span class="number">11</span>
+            Credit Card
+
+            <span class="description">
+                Données fictives uniquement
+            </span>
+
+        </button>
+
+
+
+        <button onclick="pcInfo()">
+
+            <span class="number">12</span>
+            PC Info
+
+            <span class="description">
+                Informations du navigateur
+            </span>
+
+        </button>
+
+
+
+        <button onclick="osint()">
+
+            <span class="number">13</span>
+            OSINT Tools
+
+            <span class="description">
+                Recherche légale
+            </span>
+
+        </button>
+
+
+
+        <button onclick="location.reload()">
+
+            <span class="number">14</span>
+            Exit
+
+            <span class="description">
+                Réinitialiser
+            </span>
+
+        </button>
+
+
+    </div>
+
+
+
+    <div id="result"></div>
+
+
+</div>
+
+
+
+<footer>
+
+    Concerfate's MultiTool · Web Edition
+
+</footer>
+
+
+
+<script>
+
+
+function show(title, text) {
+
+    const result =
+        document.getElementById("result");
+
+    result.style.display = "block";
+
+    result.innerHTML = `
+
+        <h2>${title}</h2>
+
+        <pre>${text}</pre>
+
+    `;
+
+}
+
+
+function github() {
+
+    window.open(
+        "https://github.com/Concerfate",
+        "_blank"
+    );
+
+}
+
+
+function demo(name) {
+
+    show(
+        name,
+
+`[ DEMONSTRATION ]
+
+Fonction : ${name}
+
+Status : simulation
+
+Aucune action réelle n'est effectuée.`
+    );
+
+}
+
+
+function networkInfo() {
+
+    show(
+        "IP Configuration",
+
+`Informations accessibles au navigateur
+
+Plateforme :
+${navigator.platform}
+
+Navigateur :
+${navigator.userAgent}
+
+Langue :
+${navigator.language}
+
+Connexion :
+${navigator.onLine ? "En ligne" : "Hors ligne"}`
+    );
+
+}
+
+
+function pingDemo() {
+
+    show(
+        "Ping",
+
+`Un navigateur ne peut pas
+exécuter directement la commande
+ping de Windows.
+
+Pour tester une IP avec Windows,
+utilise PowerShell :
+
+ping 192.168.1.1`
+    );
+
+}
+
+
+function urlShortener() {
+
+    show(
+        "URL Shortener",
+
+`Cette fonction est actuellement
+une démonstration.
+
+Un véritable raccourcisseur d'URL
+nécessiterait un serveur.`
+    );
+
+}
+
+
+function cardDemo() {
+
+    show(
+        "Credit Card",
+
+`DONNÉES FICTIVES
+
+Numéro :
+0000 0000 0000 0000
+
+Expiration :
+01/30
+
+CVV :
+000
+
+Status :
+TEST UNIQUEMENT`
+    );
+
+}
+
+
+function pcInfo() {
+
+    show(
+        "PC Information",
+
+`Plateforme :
+${navigator.platform}
+
+Navigateur :
+${navigator.userAgent}
+
+Langue :
+${navigator.language}
+
+Écran :
+${screen.width} x ${screen.height}
+
+Connexion :
+${navigator.onLine ? "En ligne" : "Hors ligne"}`
+    );
+
+}
+
+
+function osint() {
+
+    show(
+        "OSINT Tools",
+
+`OSINT = Open Source Intelligence
+
+Cela signifie :
+rechercher et analyser des
+informations publiquement disponibles.
+
+Exemples :
+
+- rechercher son propre pseudo
+- vérifier ses propres comptes
+- analyser un domaine
+- vérifier une information publique`
+    );
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
